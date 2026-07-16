@@ -23,12 +23,12 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- next greatest remap ever : asbjornHaland
 -- leader y to yank to keyboard
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
-vim.keymap.set("n", "<leader>Y", [["+Y]])
+vim.keymap.set({"n", "v"}, "<leader>y", [["+y]], { desc = "Yank to Clipboard" })
+vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "Yank to Clipboard" })
 
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+vim.keymap.set({"n", "v"}, "<leader>d", [["_d]], { desc = "Delete to _" })
 
-vim.keymap.set("n", "<C-t>", ":Neotree filesystem focus left<CR>")
+vim.keymap.set("n", "<C-t>", ":Neotree filesystem focus right<CR>", { desc = "Open Filetree" })
 
 
 vim.opt.nu = true

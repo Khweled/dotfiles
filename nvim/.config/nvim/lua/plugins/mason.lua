@@ -32,29 +32,23 @@ return {
         })
 
         mason_lspconfig.setup({
-        ensure_installed = {},
-        handlers = {
-          -- this first function is the "default handler"
-          -- it applies to every language server without a "custom handler"
-          function(server_name)
-            require("lspconfig")[server_name].setup({})
-          end,
-        },
-      })
+            automatic_enable = false,
+            ensure_installed = {
+                "lua_ls",
+                "gopls",
+                "clangd",
+            },
+        })
 
         mason_tool_installer.setup({
             ensure_installed = {
-                "prettier", -- prettier formatter
-                "stylua",   -- lua formatter
-                "isort",    -- python formatter
+                --"prettier", -- prettier formatter
+                "clang-format",
+                "stylua", -- lua formatter
+                "isort",  -- python formatter
                 "pylint",
                 "clangd",
-                "denols",
-                -- { 'eslint_d', version = '13.1.2' },
             },
-
-            -- NOTE: mason BREAKING Change! Removed setup_handlers
-            -- moved lsp configuration settings back into lspconfig.lua file
         })
     end,
 }
